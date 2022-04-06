@@ -25,10 +25,10 @@ jobs:
       - name: build
         run: npm run build
       if: ${{ github.event_name == 'push' }}
-        - uses: akhileshns/heroku-deploy@v3.12.12
-          with:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: afternoon-wildwood-95048
-            heroku_email: pedroddematos@gmail.com
-            healthcheck: "https://afternoon-wildwood-95048.herokuapp.com/health"
-            checkstring: "ok"
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: afternoon-wildwood-95048
+          heroku_email: pedroddematos@gmail.com
+          healthcheck: "https://afternoon-wildwood-95048.herokuapp.com/health"
+          checkstring: "ok"
